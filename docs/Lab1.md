@@ -716,7 +716,13 @@ Unlike a topology you configure by hand through the CLI, this fabric's entire st
    git config user.name <your name>
    ```
 
-4. Confirm that container lab folders (e.g. `lab1/topology/clab-*`) and Ansible folders (e.g. `host_vars`) are not included.
+4. Add lab1:
+
+   ```bash
+   git add lab1
+   ```
+
+5. Confirm that container lab folders (e.g. `lab1/topology/clab-*`) and Ansible folders (e.g. `host_vars`) are not included.
 
    ```bash
    git status
@@ -724,7 +730,7 @@ Unlike a topology you configure by hand through the CLI, this fabric's entire st
 
    If found, you may have missed the cleanup steps in Tasks 1 and 2. Go back and perform those steps before proceeding. You can also create `.gitignore` file to exclude these files.
 
-5. Commit and tag.
+6. Commit and tag.
 
    ```bash
    git commit -m "Add Lab 1 data centre fabric topology with addressing"
