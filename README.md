@@ -1,3 +1,3 @@
-# INWK6912 Lab4 Kit
+# INWK6912 Lab Resources
 
-This branch includes resources for lab 4
+This repo includes lab documents and other resources needed for INWK6912 lab assignments. Follow lab assignments instructions on how to use theses resources.
