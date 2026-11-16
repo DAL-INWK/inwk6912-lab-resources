@@ -1,0 +1,15 @@
+---
+# Brings an interface down or up, to generate events.
+# Usage:
+#   ansible-playbook -i ../topology/hosts.yml play_interface.yml -e "node=r21 intf=Ethernet2 intf_state=down"
+#   ansible-playbook -i ../topology/hosts.yml play_interface.yml -e "node=r21 intf=Ethernet2 intf_state=up"
+
+- name: Change the state of one interface
+  hosts: "{{ node }}"
+  gather_facts: false
+  tasks:
+    - name: Set the interface state
+      arista.eos.eos_config:
+        lines:
+          - "{{ 'shutdown' if intf_state == 'down' else 'no shutdown' }}"
+        parents: "interface {{ intf }}"
