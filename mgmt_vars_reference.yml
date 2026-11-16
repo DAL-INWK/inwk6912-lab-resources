@@ -1,0 +1,17 @@
+# Complete reference settings. Use this file to catch up if you skipped Part A:
+#   ansible-playbook -i ../topology/hosts.yml play_config_mgmt.yml -e @mgmt_vars_reference.yml
+nms_ip: 172.20.20.1
+ntp_server: "{{ nms_ip }}"
+timezone: Canada/Atlantic
+snmp_ro: dcread
+snmp_rw: dcwrite
+snmp_location: Data Centre
+snmp_contact: Reference
+snmp_trap_community: student
+snmp_traps_enabled: true
+snmp_v3_group: Reference
+snmp_v3_user: student
+snmp_v3_auth_password: Meilab123
+snmp_v3_priv_password: Meilab123
+syslog_server: "{{ nms_ip }}"
+syslog_level: informational
