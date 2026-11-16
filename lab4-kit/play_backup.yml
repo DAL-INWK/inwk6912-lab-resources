@@ -1,0 +1,13 @@
+---
+# Saves the running configuration of every device into the backup folder.
+#   ansible-playbook -i ../topology/hosts.yml play_backup.yml
+
+- name: Back up the device configurations
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Back up the running configuration
+      arista.eos.eos_config:
+        backup: true
+        backup_options:
+          dir_path: "{{ playbook_dir }}/backup"
