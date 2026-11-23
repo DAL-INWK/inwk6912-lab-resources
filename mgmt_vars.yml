@@ -2,18 +2,18 @@
 # Each section is used by one tag of play_config_mgmt.yml. Edit a section, then run the play with that tag.
 
 # Address of the workstation (the VM) as seen from the devices on the management network.
-nms_ip: 172.20.20.1
+nms_ip: 192.168.121.1
 
 # Tag: ntp
 ntp_server: "{{ nms_ip }}"
-timezone: Canada/Atlantic
+timezone: America/Halifax
 
 # Tag: snmpv2
 snmp_ro: dcread
 snmp_rw: dcwrite
 snmp_location: Data Centre
-snmp_contact: Group-XX            # replace with your group number
-snmp_trap_community: student
+snmp_contact: Group-XX            # replace with your group name
+snmp_trap_community: dcread
 snmp_traps_enabled: true
 
 # Tag: snmpv3

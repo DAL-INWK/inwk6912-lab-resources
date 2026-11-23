@@ -22,11 +22,13 @@
     - name: SNMP version 2c
       arista.eos.eos_config:
         lines:
+          - "snmp-server vrf management"
           - "snmp-server community {{ snmp_ro }} ro"
           - "snmp-server community {{ snmp_rw }} rw"
           - "snmp-server location {{ snmp_location }}"
           - "snmp-server contact {{ snmp_contact }}"
-          - "snmp-server host {{ nms_ip }} version 2c {{ snmp_trap_community }}"
+          - "snmp-server host {{ nms_ip }} vrf management version 2c {{ snmp_trap_community }}"
+          - "snmp-server host {{ nms_ip }} vrf management traps"
         save_when: modified
       tags: [snmpv2]
 
@@ -49,7 +51,7 @@
     - name: Syslog
       arista.eos.eos_config:
         lines:
-          - "logging host {{ syslog_server }}"
+          - "logging vrf management host {{ syslog_server }} 5410"
           - "logging trap {{ syslog_level }}"
         save_when: modified
       tags: [syslog]
