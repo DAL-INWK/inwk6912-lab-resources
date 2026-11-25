@@ -15,7 +15,7 @@
       arista.eos.eos_config:
         lines:
           - "clock timezone {{ timezone }}"
-          - "ntp server {{ ntp_server }}"
+          - "ntp vrf management server {{ ntp_server }}"
         save_when: modified
       tags: [ntp]
 
