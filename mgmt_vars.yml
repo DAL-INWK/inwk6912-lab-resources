@@ -1,8 +1,8 @@
 # Management protocol settings for Lab 4.
 # Each section is used by one tag of play_config_mgmt.yml. Edit a section, then run the play with that tag.
 
-# Address of the workstation (the VM) as seen from the devices on the management network.
-nms_ip: 192.168.121.1
+# Address of the netlab/containerlab management network gateway.
+nms_ip: 192.168.121.1  # Replace this address if needed
 
 # Tag: ntp
 ntp_server: "{{ nms_ip }}"
@@ -12,12 +12,12 @@ timezone: America/Halifax
 snmp_ro: dcread
 snmp_rw: dcwrite
 snmp_location: Data Centre
-snmp_contact: Group-XX            # replace with your group name
+snmp_contact: GroupXX             # replace XX with the last octet of your VM IP address 
 snmp_trap_community: dcread
 snmp_traps_enabled: true
 
 # Tag: snmpv3
-snmp_v3_group: GroupXX            # replace with your group name or number
+snmp_v3_group: GroupXX            # replace XX with the last octet of your VM IP address 
 snmp_v3_user: student
 snmp_v3_auth_password: Meilab123
 snmp_v3_priv_password: Meilab123
